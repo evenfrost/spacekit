@@ -47,6 +47,6 @@ _Better usage description and examples are on the way._
   {{/each}}
 </ul>
 
-{{Meteor.userId}}     {{!-- any property of Meteor object that is available on the client --}}
-{{Session.get 'foo'}} {{!-- as well as Session.equals 'foo' 'foo' --}}
+{{$.Meteor.userId}}     {{!-- any property of Meteor object that is available on the client --}}
+{{$.Session.get 'foo'}} {{!-- as well as $.Session.equals 'foo' 'foo' --}}
 ```
