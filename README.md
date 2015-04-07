@@ -1,0 +1,51 @@
+# spacekit
+A Spacebars helpers kit.
+
+**Note:** This is a very early release, implementation may be changed dramatically in further versions.
+
+## Installation
+`meteor add evenfrost:spacekit`
+
+## Features
+Helpers are named after MongoDB [comparison](http://docs.mongodb.org/manual/reference/operator/query-comparison/) and [logical](http://docs.mongodb.org/manual/reference/operator/query-logical/) query operators.
+
+`$each` with `$index`, `$first` and `$last` keys is available.
+
+`Meteor` and `Session` variables are available.
+
+## Usage
+_Better usage description and examples are on the way._
+```handlebars
+              {{!-- true if --}}
+{{$eq a b}}   {{!-- a equals b --}}
+{{$ne a b}}   {{!-- a doesn't equal b --}}
+{{$gt a b}}   {{!-- a is greater than b --}}
+{{$gte a b}}  {{!-- a is greater than or equals b --}}
+{{$lt a b}}   {{!-- a is less than b --}}
+{{$lte a b}}  {{!-- a is less than or equals b --}}
+{{$in a b}}   {{!-- a contains b --}}
+{{$nin a b}}  {{!-- a doesn't contain b --}}
+{{$and a b}}  {{!-- both a and b are truthy --}}
+{{$or a b}}   {{!-- either a or b is truthy --}}
+{{$nor a b}}  {{!-- neither a nor b are truthy --}}
+{{$exists a}} {{!-- a exists (is not undefined) --}}
+
+<ul>
+  {{each $ arr}}
+
+    {{#if $first}}
+      <li>first item</li>
+    {{/if}}
+
+    <li>{{$index}}: {{.}}</li>
+
+    {{#if $last}}
+      <li>last item</li>
+    {{/if}}
+
+  {{/each}}
+</ul>
+
+{{Meteor.userId}}     {{!-- any property of Meteor object that is available on the client --}}
+{{Session.get 'foo'}} {{!-- as well as Session.equals 'foo' 'foo' --}}
+```
