@@ -31,7 +31,8 @@ _Better usage description and examples are on the way._
 {{$exists a}} {{!-- a exists (is not undefined) --}}
 
 <ul>
-  {{each $ arr}}
+  {{!-- iterable can be array, object or cursor --}}
+  {{each $ iterable}}
 
     {{#if $first}}
       <li>first item</li>
