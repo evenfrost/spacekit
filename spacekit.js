@@ -42,8 +42,8 @@ var helpers = {
    * @return {Boolean} True if all arguments have truthy value.
    */
   $and: function () {
-    var args = _.toArray(arguments).slice(0, -1);
-    return _.find(args, function (arg) {
+    var args = _.initial(_.toArray(arguments));
+    return args.length && _.find(args, function (arg) {
       return !arg;
     }) === undefined;
   },
@@ -55,8 +55,8 @@ var helpers = {
    * @return {Boolean} True if at least one argument has truthy value.
    */
   $or: function () {
-    var args = _.toArray(arguments).slice(0, -1);
-    return _.find(args, function (arg) {
+    var args = _.initial(_.toArray(arguments));
+    return args.length && _.find(args, function (arg) {
       return !!arg;
     }) !== undefined;
   },
@@ -68,8 +68,8 @@ var helpers = {
    * @return {Boolean} True if all arguments have falsey value.
    */
   $nor: function () {
-    var args = _.toArray(arguments).slice(0, -1);
-    return _.find(args, function (arg) {
+    var args = _.initial(_.toArray(arguments));
+    return args.length && _.find(args, function (arg) {
       return !!arg;
     }) === undefined;
   },
