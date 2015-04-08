@@ -25,9 +25,9 @@ _Better usage description and examples are on the way._
 {{$lte a b}}  {{!-- a is less than or equals b --}}
 {{$in a b}}   {{!-- a contains b --}}
 {{$nin a b}}  {{!-- a doesn't contain b --}}
-{{$and a b}}  {{!-- both a and b are truthy --}}
-{{$or a b}}   {{!-- either a or b is truthy --}}
-{{$nor a b}}  {{!-- neither a nor b are truthy --}}
+{{$and ...}}  {{!-- all arguments are truthy --}}
+{{$or ...}}   {{!-- at least one argument is truthy --}}
+{{$nor ...}}  {{!-- none of arguments are truthy --}}
 {{$exists a}} {{!-- a exists (is not undefined) --}}
 
 <ul>

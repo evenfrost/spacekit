@@ -35,16 +35,43 @@ var helpers = {
     return !_.contains(a, b);
   },
 
-  $and: function (a, b) {
-    return a && b;
+  /**
+   * Checks if each provided argument has truthy value.
+   *
+   * @param  {...*}    Any number of arguments of any type.
+   * @return {Boolean} True if all arguments have truthy value.
+   */
+  $and: function () {
+    var args = _.toArray(arguments).slice(0, -1);
+    return _.find(args, function (arg) {
+      return !arg;
+    }) === undefined;
   },
 
-  $or: function (a, b) {
-    return a || b;
+  /**
+   * Checks if any of provided arguments has truthy value.
+   *
+   * @param  {...*}    Any number of arguments of any type.
+   * @return {Boolean} True if at least one argument has truthy value.
+   */
+  $or: function () {
+    var args = _.toArray(arguments).slice(0, -1);
+    return _.find(args, function (arg) {
+      return !!arg;
+    }) !== undefined;
   },
 
+  /**
+   * Checks if each provided argument has falsey value.
+   *
+   * @param  {...*}    Any number of arguments of any type.
+   * @return {Boolean} True if all arguments have falsey value.
+   */
   $nor: function () {
-    return !a && !b;
+    var args = _.toArray(arguments).slice(0, -1);
+    return _.find(args, function (arg) {
+      return !!arg;
+    }) === undefined;
   },
 
   $exists: function (a) {
