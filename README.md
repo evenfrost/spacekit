@@ -3,6 +3,8 @@ A Spacebars helpers kit.
 
 **Note:** This is a very early release, implementation may be changed dramatically in further versions.
 
+_I promise to follow semver as soon as it hits 0.1.0._
+
 ## Installation
 `meteor add evenfrost:spacekit`
 
