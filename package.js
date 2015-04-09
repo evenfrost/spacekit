@@ -1,6 +1,6 @@
 Package.describe({
   name: 'evenfrost:spacekit',
-  version: '0.0.2',
+  version: '0.0.3',
   summary: 'A Spacebars helpers kit',
   git: 'https://github.com/evenfrost/spacekit',
   documentation: 'README.md'
@@ -12,6 +12,7 @@ Package.onUse(function (api) {
   api.use([
     'blaze',
     'session',
+    'tracker',
     'underscore'
   ], 'client');
 

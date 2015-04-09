@@ -89,12 +89,20 @@ var helpers = {
 helpers.$ = function () {
   var arg = arguments[0],
       type = typeof arg,
+      session = {},
       each;
 
   if (type === 'undefined') {
+    // add session object with current Session getters as keys 
+    _.forEach(Session.keys, function (value, key) {
+      session[key] = function () {
+        return Session.get(key);
+      };
+    });
+
     // expose global variables as additional helpers
     return {
-      Session: Session,
+      Session: session,
       Meteor: Meteor
     };
   } else if (type !== 'object') {
