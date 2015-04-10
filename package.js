@@ -1,6 +1,6 @@
 Package.describe({
   name: 'evenfrost:spacekit',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'A Spacebars helpers kit',
   git: 'https://github.com/evenfrost/spacekit',
   documentation: 'README.md'

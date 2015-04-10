@@ -49,10 +49,10 @@ _Better usage description and examples are on the way._
   {{/each}}
 </ul>
 
-{{$.Meteor.userId}}
+{{$Meteor.userId}}
 {{!-- any property of Meteor object that is available on the client --}}
 
-{{$.Session.a}}
+{{$Session.a}}
 {{!-- same as Session.get('a') outside helpers. Is reactive.
-Can be combined with other helpers (e.g. {{$eq $.Session.a 5}}) --}}
+Can be combined with other helpers (e.g. {{$eq $Session.a 5}}) --}}
 ```

@@ -76,6 +76,17 @@ var helpers = {
 
   $exists: function (a) {
     return typeof a !== 'undefined';
+  },
+
+  // add session object with current Session getters as keys 
+  $Session: function () {
+    return _.object(_.map(Session.keys, function (value, key) {
+      return [key, Session.get(key)];
+    }));
+  },
+
+  $Meteor: function () {
+    return Meteor;
   }
 
 };
@@ -86,61 +97,38 @@ var helpers = {
  * @description Will likely be rewritten when
  *              https://github.com/meteor/meteor/pull/3560 is implemented.
  */
-helpers.$ = function () {
-  var arg = arguments[0],
-      type = typeof arg,
-      session = {},
-      each;
+helpers.$ = function (iterable) {
+  var last;
 
-  if (type === 'undefined') {
-    // add session object with current Session getters as keys 
-    _.forEach(Session.keys, function (value, key) {
-      session[key] = function () {
-        return Session.get(key);
-      };
-    });
-
-    // expose global variables as additional helpers
-    return {
-      Session: session,
-      Meteor: Meteor
-    };
-  } else if (type !== 'object') {
-    // do not proceed non-arrays and non-cursors
+ // do not proceed non-arrays and non-cursors
+ if (typeof iterable !== 'object')
     return [];
-  }
 
   // fetch if cursor
   // TODO: better checking for cursor
-  if (typeof arg.fetch === 'function')
-    arg = arg.fetch();
+  if (typeof iterable.fetch === 'function')
+    iterable = iterable.fetch();
 
-  each = function (iterable) {
-    var last;
+  last = _.size(iterable) - 1;
 
-    last = _.size(iterable) - 1;
+  return _.map(iterable, function (item, key) {
+    var type = typeof item;
+    // HACK: convert to extendable objects
+    if (type === 'string') {
+      item = new String(item);
+    } else if (type === 'number') {
+      item = new Number(item);
+    }
 
-    return _.map(iterable, function (item, key) {
-      var itemType = typeof item;
-      // HACK: convert to extendable objects
-      if (itemType === 'string') {
-        item = new String(item);
-      } else if (itemType === 'number') {
-        item = new Number(item);
-      }
+    item.$index = key;
 
-      item.$index = key;
+    if (key === 0)
+      item.$first = true;
+    if (key === last)
+      item.$last = true;
 
-      if (key === 0)
-        item.$first = true;
-      if (key === last)
-        item.$last = true;
-
-      return item;
-    });
-  };
-
-  return each(arg);
+    return item;
+  });
 };
 
 _.extend(Blaze._globalHelpers, helpers);

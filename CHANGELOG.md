@@ -1,3 +1,9 @@
+## 0.0.4 (2015-04-10)
+
+#### Breaking changes
+
+ - change global scope helpers logic. New syntax is ```{{$Session.a}}``` or ```{{$Meteor.userId}}``` instead of ```{{$.Session.a}}``` or ```{{$.Meteor.userId}}```. This is made for better API consistency and performance.
+
 ## 0.0.3 (2015-04-09)
 
 #### Breaking changes
