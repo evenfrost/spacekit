@@ -34,7 +34,7 @@ _Better usage description and examples are on the way._
 
 <ul>
   {{!-- iterable can be array, object or cursor --}}
-  {{each $ iterable}}
+  {{#each $ iterable}}
 
     {{#if $first}}
       <li>first item</li>
