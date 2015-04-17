@@ -25,7 +25,9 @@ _Better usage description and examples are on the way._
 {{$gte a b}}  {{!-- a is greater than or equals b --}}
 {{$lt a b}}   {{!-- a is less than b --}}
 {{$lte a b}}  {{!-- a is less than or equals b --}}
-{{$in a b}}   {{!-- a contains b --}}
+{{$in a b}}   {{!-- a contains b.
+                    a is array (provided either as helper variable or raw string
+                    e.g. '["foo", 42, "bar"]') --}}
 {{$nin a b}}  {{!-- a doesn't contain b --}}
 {{$and ...}}  {{!-- all arguments are truthy --}}
 {{$or ...}}   {{!-- at least one argument is truthy --}}
@@ -54,5 +56,5 @@ _Better usage description and examples are on the way._
 
 {{$Session.a}}
 {{!-- same as Session.get('a') outside helpers. Is reactive.
-Can be combined with other helpers (e.g. {{$eq $Session.a 5}}) --}}
+Can be combined with other helpers (e.g. {{$eq $Session.a 42}}) --}}
 ```
