@@ -1,3 +1,7 @@
+## 0.0.5 (2015-04-17)
+
+ - make possible to provide raw array as first argument for $in and $nin helpers
+
 ## 0.0.4 (2015-04-10)
 
 #### Breaking changes

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'evenfrost:spacekit',
-  version: '0.0.4',
+  version: '0.0.5',
   summary: 'A $pacebars helpers kit',
   git: 'https://github.com/evenfrost/spacekit',
   documentation: 'README.md'
