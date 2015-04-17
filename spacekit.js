@@ -28,10 +28,16 @@ var helpers = {
   },
 
   $in: function (a, b) {
+    if (typeof a === 'string')
+      a = JSON.parse(a);
+
     return _.contains(a, b);
   },
 
   $nin: function (a, b) {
+    if (typeof a === 'string')
+      a = JSON.parse(a);
+    
     return !_.contains(a, b);
   },
 
