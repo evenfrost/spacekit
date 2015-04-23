@@ -1,3 +1,7 @@
+## 0.0.6 (2015-04-23)
+
+ - add `$eval` helper
+
 ## 0.0.5 (2015-04-17)
 
  - make possible to provide raw array as first argument for $in and $nin helpers
