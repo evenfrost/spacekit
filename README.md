@@ -91,7 +91,7 @@ Returns true if at least one argument is truthy.
 #### $nor ...
 Returns true if none of arguments are truthy.
 ```handlebars
-{{#if $or false 0 undefined}}
+{{#if $nor false 0 undefined}}
   <p>True.</p>
 {{/if}}
 ```
