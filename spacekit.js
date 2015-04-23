@@ -45,7 +45,7 @@ var helpers = {
    * Checks if each provided argument has truthy value.
    *
    * @param  {...*}    Any number of arguments of any type.
-   * @return {Boolean} True if all arguments have truthy value.
+   * @return {boolean} True if all arguments have truthy value.
    */
   $and: function () {
     var args = _.initial(_.toArray(arguments));
@@ -58,7 +58,7 @@ var helpers = {
    * Checks if any of provided arguments has truthy value.
    *
    * @param  {...*}    Any number of arguments of any type.
-   * @return {Boolean} True if at least one argument has truthy value.
+   * @return {boolean} True if at least one argument has truthy value.
    */
   $or: function () {
     var args = _.initial(_.toArray(arguments));
@@ -71,7 +71,7 @@ var helpers = {
    * Checks if each provided argument has falsey value.
    *
    * @param  {...*}    Any number of arguments of any type.
-   * @return {Boolean} True if all arguments have falsey value.
+   * @return {boolean} True if all arguments have falsey value.
    */
   $nor: function () {
     var args = _.initial(_.toArray(arguments));
@@ -82,6 +82,17 @@ var helpers = {
 
   $exists: function (a) {
     return typeof a !== 'undefined';
+  },
+
+  /**
+   * Evaluates a string.
+   * Should be used carefully.
+   *
+   * @param  {string} str The string to be evaluated.
+   * @return {*}          The result of evaluated expression.
+   */
+  $eval: function (str) {
+    return eval(str);
   },
 
   // add session object with current Session getters as keys 
