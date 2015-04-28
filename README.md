@@ -16,6 +16,25 @@ Helpers are named after MongoDB [comparison](http://docs.mongodb.org/manual/refe
 `Meteor` and `Session` variables are available.
 
 ## Available helpers
+- [$eq a b](#eq-a-b)
+- [$ne a b](#ne-a-b)
+- [$gt a b](#gt-a-b)
+- [$gte a b](#gte-a-b)
+- [$lt a b](#lt-a-b)
+- [$lte a b](#lte-a-b)
+- [$in arr b](#in-arr-b)
+- [$nin arr b](#nin-arr-b)
+- [$and ...](#and-)
+- [$or ...](#or-)
+- [$nor ...](#nor-)
+- [$exists a](#exists-a)
+- [$eval str](#eval-str)
+- [$ iterable](#-iterable)
+- [$Meteor](#meteor)
+- [$Session](#session)
+
+
+## Description
 #### $eq a b
 Returns true if `a` equals `b`.
 ```handlebars
