@@ -122,6 +122,7 @@ Returns true if `a` exists (is not undefined).
 {{/if}}
 ```
 #### $eval str
+***Experimental.***
 Evaluates a string expression and returns its result.
 Should be used [carefully](http://stackoverflow.com/questions/197769/when-is-javascripts-eval-not-evil).
 ```handlebars
