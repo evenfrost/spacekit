@@ -11,9 +11,9 @@ _I promise to follow semver as soon as it hits 0.1.0._
 ## Features
 Helpers are named after MongoDB [comparison](http://docs.mongodb.org/manual/reference/operator/query-comparison/) and [logical](http://docs.mongodb.org/manual/reference/operator/query-logical/) query operators.
 
-`$each` with `$index`, `$first` and `$last` keys is available.
+`each $` with `$index`, `$first` and `$last` keys is available.
 
-`Meteor` and `Session` variables are available.
+`$Meteor` and `$Session` helpers are available.
 
 ## Available helpers
 - [$eq a b](#eq-a-b)
