@@ -9,13 +9,13 @@ _I promise to follow semver as soon as it hits 0.1.0._
 `meteor add evenfrost:spacekit`
 
 ## Features
-Helpers are named after MongoDB [comparison](http://docs.mongodb.org/manual/reference/operator/query-comparison/) and [logical](http://docs.mongodb.org/manual/reference/operator/query-logical/) query operators.
+Spacebars helpers are named after MongoDB [comparison](http://docs.mongodb.org/manual/reference/operator/query-comparison/) and [logical](http://docs.mongodb.org/manual/reference/operator/query-logical/) query operators.
 
 `each $` with `$index`, `$first` and `$last` keys is available.
 
 `$Meteor` and `$Session` helpers are available.
 
-## Available helpers
+## Spacebars helpers index
 - [$eq a b](#eq-a-b)
 - [$ne a b](#ne-a-b)
 - [$gt a b](#gt-a-b)
